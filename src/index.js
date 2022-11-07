@@ -4,6 +4,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 var jsforce  = require('jsforce');
+const port = process.env.PORT || 8000;
 
 // defining the Express app
 const app = express();
@@ -64,6 +65,6 @@ app.get('/', function (req, res){
   res.send('Salesfroce Connected');
 });
 // starting the server
-app.listen(3001, () => {
-  console.log('listening on port 3001');
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
 });
